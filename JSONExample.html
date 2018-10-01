@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JSON Example Page</title>
+</head>
+<body>
+  <script>
+    var exampleJSONData = '{"objekt":{"string":"words","number":101,"array":["one","two","three"],"bool":true,"null":null}}';
+
+  </script>
+  <h1>JSON Example Page</h1>
+  <p>JSON is similar to JavaScript object syntax, but requires all identifiers
+  to be with in "" (double quotes).<br/>
+  JSON is plain text which allows it to be used in many ways and programming
+  languages.<br/>
+  Mostly used in browser/server comunications.<br/>
+  </p>
+  <p id="demo"></p>
+  <script>
+  var thingsYouShouldntStoreInJSON = '{"arrayOfNoNos":[{"type":"functions","why":"Functions are difficult to convert back once in JSON formatt","possible":true},{"type":"dates","why": "Dates are not supported in JSON","possible":false},{"type":"undefinedDataTypes","why": "Do not use","possible":false}]}';
+  var JSONData = JSON.parse(thingsYouShouldntStoreInJSON);
+  document.getElementById("demo").innerHTML = "Object info: " + JSONData.arrayOfNoNos[1].type;
+  </script>
+<!--
+JSON CREATION: Use text fields to enable individualized JSONData object creation(export as .txt file?)
+JSON CONSUMPTION: Use alert("Text"); to show data from JSONData using a drop down
+
+-->
+
+</body>
+</html>
